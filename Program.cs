@@ -5,12 +5,15 @@ namespace CryptoSoft_ConsoleV
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            Encrypt Encryption;
+            string key;
+        Encrypt Encryption;
             Encryption = new Encrypt();
 
-            Encryption.ToEncrypt();
+            Encryption.GetInfoToDecrypt();
+            
             Thread.Sleep(4000);
         }
     }
