@@ -13,16 +13,16 @@ namespace CryptoSoft_ConsoleV
         public string text;
         public string key;
         public string ResultF;
-        public String FilePath_Source2;
+        /*public String FilePath_Source2;*/
         public void GetInfoToDecrypt()
         {
             File1 FileToEncrypt;
             FileToEncrypt = new File1();
 
-            FileToEncrypt.GetFile();
+            FileToEncrypt.GetFileProcess();
             Console.WriteLine("le nom du fichier est " + FileToEncrypt.File_Name);
 
-            FileToEncrypt.ReadFileText();
+            
             text = FileToEncrypt.Text;
             /*Console.WriteLine("le contenu du fichier est " + text);*/
 
@@ -56,16 +56,17 @@ namespace CryptoSoft_ConsoleV
                 result.Append(combinedChar);
             }
             ResultF = result.ToString();
-            FilePath_Source2 = Console.ReadLine();
+            /*FilePath_Source2 = Console.ReadLine();*/
             /*File.CreateText(FilePath_Source2);
             *//*File.WriteAllText(FilePath_Source2, ResultF);*//*
             using (StreamWriter sw = File.CreateText(FilePath_Source2))
             {
                 sw.WriteLine(ResultF);
             }*/
+            string DF = FileToEncrypt.FilePath_Source + "ENCRYPTED" + FileToEncrypt.File_Name ;
+           /* File.CreateText(DF);*/
 
-            Directory.CreateDirectory(FilePath_Source2);
-            File.AppendAllText(FilePath_Source2 + FileToEncrypt.File_Name + "\\ENCRYPTED", ResultF);
+            File.AppendAllText(DF, ResultF);
 
             /*Console.WriteLine("le resultat est " + ResultF);*/
         }

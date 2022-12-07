@@ -14,7 +14,7 @@ namespace CryptoSoft_ConsoleV
 
             Encryption.GetInfoToDecrypt();
             
-            Thread.Sleep(4000);
+            
         }
     }
 }
